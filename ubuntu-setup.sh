@@ -3,6 +3,13 @@
 #MIT License
 #Copyright (c) 2023 Nidhi Bhatt
 
+blue='\033[0;34m'
+white= '\033[0;37m' 
+red= '\033[0;31m' 
+green='\033[0;32m'
+purple='\033[0;35m'
+cyan='\033[0;36m'
+
 echo " "
 function check_root() {
     # Checking for root access and proceed if it is present
@@ -16,7 +23,7 @@ function check_root() {
 }
 
 echo " "
-echo "This script is primarily for ubuntu but can be used for other ubuntu based distros like linux mint and also for debian based distros like kali linux as well. It will update/upgrade the system and install recommended software!"
+echo -e "${cyan} This script is primarily for ubuntu but can be used for other ubuntu based distros like linux mint and also for debian based distros like kali linux as well. It will update/upgrade the system and install recommended software!"
 
 echo " "
 echo "Updating system..." 

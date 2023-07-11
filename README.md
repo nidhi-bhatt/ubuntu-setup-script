@@ -8,9 +8,9 @@ This script updates the Ubuntu system and installs a variety of recommended soft
 
 2. Firewall
 
-3. tlp
+3. tlp : To improve battery life
 
-4. ubuntu-restricted-extras
+4. ubuntu-restricted-extras : installing multimedia-codecs
 
 5. gnome-tweaks
 
@@ -23,36 +23,38 @@ This script updates the Ubuntu system and installs a variety of recommended soft
 9. Google Chrome
 
 10. Timeshift
+    
+11. Preload
 
-11. VLC Media Player
+12. VLC Media Player
 
-12. Gimp
+13. Gimp
 
-13. htop
+14. htop
 
-14. ttf-mscorefonts-installer
+15. ttf-mscorefonts-installer : using microsoft fonts on ubuntu
 
-15. bleachbit
+16. bleachbit
 
-16. Whatsie
+17. Whatsie
 
-17. Discord
+18. Discord
 
-18. Telegram-Desktop
+19. Telegram-Desktop
 
-19. Spotify
+20. Spotify
 
-20. Steam
+21. Steam
 
-21. OBS Studio
+22. OBS Studio
 
-22. Bottles
+23. Bottles
 
-23. git
+24. git
 
-24. VSCode
+25. VSCode
 
-25. Github Desktop
+26. Github Desktop
 
    
 The script also cleans up space by removing the packages that failed to install completely, the apt-cache, and the unwanted software dependencies.

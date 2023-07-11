@@ -3,7 +3,7 @@
 #MIT License
 #Copyright (c) 2023 Nidhi Bhatt
 
-
+echo " "
 function check_root() {
     # Checking for root access and proceed if it is present
     ROOT_UID=0
@@ -15,7 +15,7 @@ function check_root() {
     fi
 }
 
-
+echo " "
 echo "This script is primarily for ubuntu but can be used for other ubuntu based distros like linux mint and also for debian based distros like kali linux as well. It will update/upgrade the system and install recommended software!"
 
 echo " "

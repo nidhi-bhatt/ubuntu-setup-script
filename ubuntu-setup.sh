@@ -68,6 +68,7 @@ sudo apt install gnome-shell-extension-manager
 
 
 else 
+echo " "
 echo "Moving on..."
 
 fi

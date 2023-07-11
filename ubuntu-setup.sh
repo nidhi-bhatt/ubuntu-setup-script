@@ -16,7 +16,7 @@ function check_root() {
 }
 
 
-echo "This will update ubuntu and ubuntu based distros and install recommended software!"
+echo "This script is primarily for ubuntu but can be used for other ubuntu based distros like linux mint and also for debian based distros like kali linux as well. It will update/upgrade the system and install recommended software!"
 
 echo " "
 echo "Updating system..." 

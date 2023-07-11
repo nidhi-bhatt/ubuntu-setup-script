@@ -12,7 +12,7 @@ function check_root() {
 }
 
 
-echo "This will update ubuntu or ubuntu based distros and install recommended software!"
+echo "This will update ubuntu and ubuntu based distros and install recommended software!"
 
 echo " "
 echo "Updating system..." 

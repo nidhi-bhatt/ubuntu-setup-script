@@ -6,16 +6,16 @@ function check_root() {
     if [[ ! "${UID}" -eq "${ROOT_UID}" ]]; then
         # Error message
         echo_error 'Run me as root.'
-        echo_info 'try sudo ./updateUbuntu.sh'
+        echo_info 'try sudo ./ubuntu-setup.sh'
         exit 1
     fi
 }
 
 
-echo "This will update Ubuntu/Ubuntu based distros and install recommended software!"
+echo "This will update ubuntu or ubuntu based distros and install recommended software!"
 
 echo " "
-echo "Updating System..." 
+echo "Updating system..." 
 echo " "
 sudo apt update -y && sudo apt upgrade -y
 
@@ -25,7 +25,7 @@ echo " "
 sudo apt install neofetch
 
 echo " "
-echo "Enabling Firewall..."
+echo "Enabling firewall..."
 echo " "
 sudo apt update
 sudo ufw enable
@@ -39,11 +39,15 @@ sudo systemct1 enable tlp
 sudo tlp start
 
 echo " "
-echo "Installing Multimedia Codecs..." 
+echo "Installing multimedia codecs..." 
 echo " "
 sudo add-apt-repository multiverse
 sudo apt update -y
 sudo apt install ubuntu-restricted-extras
+
+echo " "
+read -p "Do you have GNOME Desktop Environment (Ubuntu has gnome desktop environment by default) [y/n] " val
+if [ "$val" = "y" ]; then
 
 echo " "
 echo "Installing GNOME Tweak Tool..." 
@@ -54,6 +58,14 @@ echo " "
 echo "Installing GNOME Extension Manager..." 
 echo " "
 sudo apt install gnome-shell-extension-manager
+
+
+
+else 
+echo "Moving on..."
+
+fi
+
 
 echo " "
 echo "Setting up snap..."
@@ -73,11 +85,13 @@ else
 echo "Installing snap for other ubuntu based distros..."
 sudo apt update
 sudo apt install snapd
+sudo systemctl start snapd
+sudo systemctl enable snapd
 
 fi
 
 echo " "
-echo "Setting up Flatpak ..." 
+echo "Setting up flatpak ..." 
 echo " "
 sudo apt update
 sudo apt install flatpak
@@ -85,14 +99,14 @@ sudo apt install gnome-software-plugin-flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 echo " "
-echo "Installing Google Chrome..." 
+echo "Installing google chrome..." 
 echo " "
 sudo apt update 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
 
 echo " "
-echo "Installing Timeshift..."
+echo "Installing timeshift..."
 echo " "
 sudo apt update
 sudo apt install timeshift -y
@@ -104,7 +118,7 @@ echo " "
 sudo apt install vlc
 
 echo " "
-echo "Installing Gimp..."
+echo "Installing gimp..."
 echo " "
 sudo apt install gimp
 
@@ -113,12 +127,12 @@ echo "Enabling ‘Minimize on Click’ for the Ubuntu Dock.."
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
 echo " "
-echo "Improving Application Startup Speed"
+echo "Improving application startup speed"
 echo " "
 sudo apt-get install preload
 
 echo " "
-echo "Installing Synaptic Package Manager... "
+echo "Installing synaptic package manager... "
 echo " "
 sudo apt install synaptic
 
@@ -128,13 +142,13 @@ echo " "
 sudo apt install htop
 
 echo " "
-echo "Installing Microsoft fonts on Ubuntu..."
+echo "Installing microsoft fonts on ubuntu..."
 echo " "
 sudo apt update && sudo apt install ttf-mscorefonts-installer
 sudo fc-cache -f -v
 
 echo " "
-echo "Installing Bleachbit..."
+echo "Installing bleachbit..."
 echo " "
 sudo apt install bleachbit -y
 
@@ -142,7 +156,7 @@ echo " "
 read -p "Do you want to install Whatsie (WhatsApp-Web Client)? [y/n] " val
 if [ "$val" = "y" ]; then
   echo " "
-echo "Installing Whatsie..."
+echo "Installing whatsie..."
 echo " "
 sudo apt update -y
 flatpak install flathub com.ktechpit.whatsie
@@ -152,10 +166,10 @@ echo "Moving on..."
 fi
 
 echo " "
-read -p "Do you want to install Discord? [y/n] " val
+read -p "Do you want to install discord? [y/n] " val
 if [ "$val" = "y" ]; then
   echo " "
-echo "Installing Discord..."
+echo "Installing discord..."
 echo " "
 sudo apt update -y
 flatpak install flathub com.discordapp.Discord
@@ -165,10 +179,10 @@ echo "Moving on..."
 fi
 
 echo " "
-read -p "Do you want to install Telegram-Desktop? [y/n] " val
+read -p "Do you want to install telegram-desktop? [y/n] " val
 if [ "$val" = "y" ]; then
   echo " "
-echo "Installing Telegram-Desktop..."
+echo "Installing telegram-desktop..."
 echo " "
 sudo apt update -y
 flatpak install flathub org.telegram.desktop
@@ -178,10 +192,10 @@ echo "Moving on..."
 fi
 
 echo " "
-read -p "Do you want to install Spotify? [y/n] " val
+read -p "Do you want to install spotify? [y/n] " val
 if [ "$val" = "y" ]; then
   echo " "
-echo "Installing Spotify..."
+echo "Installing spotify..."
 echo " "
 sudo apt update -y
 flatpak install flathub com.spotify.Client
@@ -192,10 +206,10 @@ fi
 
 
 echo " "
-read -p "Do you want to install Steam? [y/n] " val
+read -p "Do you want to install steam? [y/n] " val
 if [ "$val" = "y" ]; then
   echo " "
-echo "Installing Steam..."
+echo "Installing steam..."
 echo " "
 sudo apt update -y
 sudo apt install steam
@@ -219,7 +233,7 @@ fi
 
 
 echo " "
-read -p "Do you want to install Bottles (Used to run windows apps on linux)? [y/n] " val
+read -p "Do you want to install bottles (Used to run windows apps on linux)? [y/n] " val
 if [ "$val" = "y" ]; then
   echo " "
 echo "Installing bottles..."
@@ -235,7 +249,7 @@ fi
 
 
 echo " "
-read -p "Do you want to setup development environment (Git+ VSCode + Github Desktop)? [y/n] " val
+read -p "Do you want to setup development environment (Git + VSCode + Github Desktop)? [y/n] " val
 if [ "$val" = "y" ]; then
 echo " "
 echo "Installing git..."
@@ -244,14 +258,14 @@ sudo apt update -y
 sudo apt install git
 
 echo " "
-echo "Installing VSCode..."
+echo "Installing vscode..."
 echo " "
 sudo apt update -y
 sudo apt install snapd
 sudo snap install code --classic
 
 echo " "
-echo "Installing Github Desktop..."
+echo "Installing github-desktop..."
 echo " "
 sudo apt update -y
 flatpak install -y flathub io.github.shiftey.Desktop
@@ -277,6 +291,9 @@ sudo apt-get autoremove
 
 echo " "
 echo "Some apps/changes will only appear after a restart, so don't worry if you can't see them on your system right now. Run 'sudo reboot' on terminal to restart your system."
+
+
+
 
 
 

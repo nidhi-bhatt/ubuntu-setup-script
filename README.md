@@ -36,25 +36,27 @@ This script updates the Ubuntu system and installs a variety of recommended soft
 
 16. bleachbit
 
-17. Whatsie
+17. Zoom
 
-18. Discord
+18. Whatsie
 
-19. Telegram-Desktop
+19. Discord
 
-20. Spotify
+20. Telegram-Desktop
 
-21. Steam
+21. Spotify
 
-22. OBS Studio
+22. Steam
 
-23. Bottles
+23. OBS Studio
 
-24. git
+24. Bottles
 
-25. VSCode
+25. git
 
-26. Github Desktop
+26. VSCode
+
+27. Github Desktop
 
    
 The script also cleans up space by removing the packages that failed to install completely, the apt-cache, and the unwanted software dependencies.

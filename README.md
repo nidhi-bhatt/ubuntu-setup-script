@@ -65,7 +65,8 @@ The script also cleans up space by removing the packages that failed to install 
 Clone the project
 
 ```bash
-sudo apt install git
+  sudo apt update -y && sudo apt upgrade -y
+  sudo apt install git
   git clone https://github.com/nidhi-bhatt/ubuntu-setup-script.git
 ```
 

@@ -56,6 +56,7 @@ This script updates the Ubuntu system and installs a variety of recommended soft
 
    
 The script also cleans up space by removing the packages that failed to install completely, the apt-cache, and the unwanted software dependencies.
+
 ## Features
 
 Here are some of the benefits of using this script:

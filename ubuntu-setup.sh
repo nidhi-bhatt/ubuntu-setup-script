@@ -297,6 +297,13 @@ echo " "
 sudo apt-get autoremove
 
 echo " "
+echo "Display disk space usage of root partition (/) - "
+df -h /
+echo " "
+echo "Display disk space usage of home partition (/home) - "
+df -h /home
+
+echo " "
 echo "Some apps/changes will only appear after a restart, so don't worry if you can't see them on your system right now. Run 'sudo reboot' on terminal to restart your system."
 
 

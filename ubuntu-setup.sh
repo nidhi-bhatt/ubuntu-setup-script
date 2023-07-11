@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#MIT License
+#Copyright (c) 2023 Nidhi Bhatt
+
+
 function check_root() {
     # Checking for root access and proceed if it is present
     ROOT_UID=0
@@ -52,11 +56,13 @@ if [ "$val" = "y" ]; then
 echo " "
 echo "Installing GNOME Tweak Tool..." 
 echo " "
+sudo apt update
 sudo apt install gnome-tweaks
 
 echo " "
 echo "Installing GNOME Extension Manager..." 
 echo " "
+sudo apt update
 sudo apt install gnome-shell-extension-manager
 
 

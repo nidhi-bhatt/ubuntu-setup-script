@@ -10,7 +10,7 @@ function check_root() {
 }
 
 
-read -p "Do you want to update system? (y/n)" val
+read -p "Do you want to update system? [y/n]" val
 if [ "$val" = "y" ]; then
   echo " "
   sudo apt update -y && sudo apt upgrade -y

@@ -57,7 +57,29 @@ This script updates the Ubuntu system and installs a variety of recommended soft
    
 The script also cleans up space by removing the packages that failed to install completely, the apt-cache, and the unwanted software dependencies.
 
-## Features
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/nidhi-bhatt/ubuntu-setup-script.git
+```
+
+Go to the project directory
+
+```bash
+  cd ubuntu-setup-script
+```
+
+Run the script
+
+```bash
+  ./ubuntu-setup.sh
+```
+
+
+## Benefits
 
 Here are some of the benefits of using this script:
 
@@ -73,7 +95,6 @@ I hope this helps!
 
 ## Optimizations
 
-
 The script also cleans up space by removing the packages that failed to install completely, the apt-cache, and the unwanted software dependencies.
 
 The script is designed to be easy to use. To run the script, simply download it and run it from the command line. The script will ask you to confirm the software that you want to install. Once you have confirmed the software, the script will start installing it.
@@ -81,13 +102,13 @@ The script is designed to be easy to use. To run the script, simply download it 
 The script is also highly customizable. You can add or remove software from the list of software that is installed by the script. You can also change the settings for the script, such as the directory where the software is installed.
 
 The script is free to use and modify. You can download it from GitHub and use it on your own systems.
+## License
 
-
-
-
+[MIT](https://choosealicense.com/licenses/mit/)
 
 
 ## Feedback
 
 If you have any feedback, please reach out in the comments or at itsnibhatt@gmail.com
+
 

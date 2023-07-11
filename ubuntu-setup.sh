@@ -171,6 +171,19 @@ echo " "
 sudo apt install bleachbit -y
 
 echo " "
+read -p $'\e[36mDo you want to install zoom? [y/n]\e[0m ' val
+if [ "$val" = "y" ]; then
+  echo " "
+echo -e "${blue}Installing zoom..."
+echo " "
+sudo apt update -y
+flatpak install flathub us.zoom.Zoom
+else 
+echo -e "${cyan}Moving on..."
+
+fi
+
+echo " "
 read -p $'\e[36mDo you want to install whatsie (whatsapp-web client)? [y/n]\e[0m ' val
 if [ "$val" = "y" ]; then
   echo " "

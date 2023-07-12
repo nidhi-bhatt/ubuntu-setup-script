@@ -84,44 +84,62 @@ echo -e "${cyan}Moving on..."
 fi
 
 
-
 echo " "
-echo -e "${blue}Setting up snap..."
-read -p $'\e[36mAre you running this on Linux Mint 20 or above? [y/n]\e[0m ' val
+read -p $'\e[36mDo you want to install flatpak? [y/n]\e[0m ' val
 if [ "$val" = "y" ]; then
-  echo " "
-echo -e "${blue}Installing snap for linux mint..."
-echo " "
-sudo mv /etc/apt/preferences.d/nosnap.pref ~/Documents/nosnap.backup
-sudo apt update -y
-sudo apt install snapd
-sudo systemctl start snapd
-sudo systemctl enable snapd
-
-
+  	echo " "
+	echo -e "${blue}Setting up flatpak ..."
+	echo " "
+	sudo apt update
+	sudo apt install flatpak
+	sudo apt install gnome-software-plugin-flatpak
+	flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 else 
-echo -e "${blue}Installing snap for other ubuntu based distros..."
-sudo apt update
-sudo apt install snapd
-sudo systemctl start snapd
-sudo systemctl enable snapd
+	echo -e "${cyan}Moving on..."
 
 fi
 
-echo " "
-echo -e "${purple}Setting up flatpak ..." 
-echo " "
-sudo apt update
-sudo apt install flatpak
-sudo apt install gnome-software-plugin-flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
 
 echo " "
-#echo -e "${green}Installing google chrome..." 
+read -p $'\e[36mDo you want to install snap? [y/n]\e[0m ' val
+if [ "$val" = "y" ]; then
+  	echo " "
+	echo -e "${blue}Setting up snap..."
+	read -p $'\e[36mAre you running this on Linux Mint 20 or above? [y/n]\e[0m ' val
+	if [ "$val" = "y" ]; then
+		echo " "
+		echo -e "${blue}Installing snap for linux mint..."
+		echo " "
+		sudo mv /etc/apt/preferences.d/nosnap.pref ~/Documents/nosnap.backup
+		sudo apt update -y
+		sudo apt install snapd
+		sudo systemctl start snapd
+		sudo systemctl enable snapd
+
+
+	else 
+		echo -e "${blue}Installing snap for other ubuntu based distros..."
+		sudo apt update
+		sudo apt install snapd
+		sudo systemctl start snapd
+		sudo systemctl enable snapd
+
+	fi
+else
+	echo -e "${cyan}Moving on..."
+
+fi
+
+
+
+
 echo " "
-#sudo apt update 
-#wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-#sudo apt install ./google-chrome-stable_current_amd64.deb
+echo -e "${green}Installing google chrome..." 
+echo " "
+sudo apt update 
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
 
 echo " "
 echo -e "${yellow}Installing timeshift..."
@@ -292,7 +310,7 @@ echo " "
 echo -e "${blue}Installing vscode..."
 echo " "
 sudo apt update -y
-sudo apt install snapd
+
 sudo snap install code --classic
 
 echo " "

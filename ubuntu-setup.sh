@@ -73,6 +73,7 @@ echo " "
 echo -e "${blue}Installing GNOME Extension Manager..." 
 echo " "
 sudo apt update
+
 sudo apt install gnome-shell-extension-manager
 
 
@@ -140,6 +141,7 @@ echo " "
 sudo apt update 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
+sudo apt install chrome-gnome-shell
 
 echo " "
 echo -e "${yellow}Installing timeshift..."

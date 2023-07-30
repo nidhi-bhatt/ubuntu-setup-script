@@ -297,6 +297,37 @@ echo -e "${cyan}Moving on..."
 
 fi
 
+echo " "
+read -p $'\e[36mDo you want to install qBittorrent? [y/n]\e[0m ' val
+if [ "$val" = "y" ]; then
+  echo " "
+echo -e "${blue}Installing qBittorrent..."
+echo " "
+sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
+sudo apt install qbittorrent
+
+
+else 
+echo -e "${cyan}Moving on..."
+
+fi
+
+echo " "
+read -p $'\e[36mDo you want to install bitwarden (password manager)? [y/n]\e[0m ' val
+if [ "$val" = "y" ]; then
+  echo " "
+echo -e "${blue}Installing bitwarden..."
+echo " "
+flatpak install flathub com.bitwarden.desktop -y
+
+
+else 
+echo -e "${cyan}Moving on..."
+
+fi
+
+
+
 
 
 echo " "

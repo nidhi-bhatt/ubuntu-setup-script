@@ -191,6 +191,11 @@ echo " "
 sudo apt install bleachbit -y
 
 echo " "
+echo -e "${yellow}Installing vim editor..."
+echo " "
+sudo apt install vim -y
+
+echo " "
 read -p $'\e[36mDo you want to install zoom? [y/n]\e[0m ' val
 if [ "$val" = "y" ]; then
   echo " "

@@ -67,21 +67,21 @@ The script also cleans up space by removing the packages that failed to install 
 Clone the project
 
 ```bash
-  sudo apt update -y && sudo apt upgrade -y
-  sudo apt install git
-  git clone https://github.com/nidhi-bhatt/ubuntu-setup-script.git
+sudo apt update -y && sudo apt upgrade -y
+sudo apt install git
+git clone https://github.com/nidhi-bhatt/ubuntu-setup-script.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd ubuntu-setup-script
+cd ubuntu-setup-script
 ```
 
 Run the script
 
 ```bash
-  ./ubuntu-setup.sh
+./ubuntu-setup.sh
 ```
 
 
